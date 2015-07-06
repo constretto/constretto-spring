@@ -19,7 +19,7 @@ import java.lang.annotation.*;
 
 /**
  * Indicated for what environment the annotated class should be a candidate for autowiring.
- * <p/>
+ * <br>
  * When used on fields if will instruct the Spring container to inject the current environment into the annotated field.
  *
  * @author <a href="mailto:kaare.nilsen@gmail.com">Kaare Nilsen</a>

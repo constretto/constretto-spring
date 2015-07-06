@@ -36,12 +36,12 @@ import java.util.Map;
 /**
  * {@link BeanPostProcessor} implementation that autowires annotated fields annotated with the &#064;Configuration or
  * &#064;Environment annotations.
- * <p/>
- * <p/>
+ * <br>
+ * <br>
  * Fields are injected right after construction of a bean, before any config methods are invoked. Such a config field
  * does not have to be public.
- * <p/>
- * <p/>
+ * <br>
+ * <br>
  * If a &#064;Configuration element have the required flag set, and no value could be assosiated with the given key a
  * {@link BeanInstantiationException} is thrown invalidating the entire context.
  *

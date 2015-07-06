@@ -39,8 +39,8 @@ import static java.util.Arrays.asList;
 /**
  * A BeanFactoryBeanFactoryPostProcessor implementation that will if registered as a bean in a spring context, enable
  * the constretto autowiring capabilities in the container.
- * <p/>
- * <p/>
+ * <br>
+ * <br>
  * May be used on any existing configurations and in combination with all the standard context implementations from the
  * Spring framework.
  *

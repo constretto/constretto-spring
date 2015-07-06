@@ -25,12 +25,12 @@ import java.util.List;
 /**
  * Provides the default assembly environment resolving strategy which is used if no other implementation found in the
  * current sprint context.
- * <p/>
- * <p/>
+ * <br>
+ * <br>
  * It looks for a system property called CONSTRETTO_ENV, and if that is not found tries to find the variable in the system
  * environment.
- * <p/>
- * <p/>
+ * <br>
+ * <br>
  * If no system property or system environment variable found, it will for the xml support fall back to the default bean, and
  * When autowiring remove all constretto tagged beans as autowire candidates.
  *

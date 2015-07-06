@@ -27,18 +27,18 @@ import java.util.Map;
  * A factory bean used to instantiate spring beans depending on the environment you are running in. This factory bean
  * use the {@link org.constretto.spring.resolver.AssemblyContextResolver} to lookup the running environment. the value of this property is used to
  * lookup in the map of beans.
- * <p/>
+ * <br>
  * <h2>Usage :</h2>
- * <p/>
+ * <br>
  * <pre>
  * &lt;bean id=&quot;productionBean&quot; class=&quot;com..ProductionTestBean&quot;&gt;
  *      &lt;property name=&quot;value&quot; value=&quot;production value&quot; /&gt;
  *  &lt;/bean&gt;
- * <p/>
+ * <br>
  *  &lt;bean id=&quot;developmentBean&quot; class=&quot;com..DevelopmentTestBean&quot;&gt;
  *      &lt;property name=&quot;value&quot; value=&quot;development value&quot; /&gt;
  *  &lt;/bean&gt;
- * <p/>
+ * <br>
  *  &lt;bean id=&quot;myBean&quot; class=&quot;org.constretto.spring.ConstrettoSingletonFactoryBean&quot;&gt;
  *      &lt;constructor-arg&gt;
  *          &lt;map&gt;
@@ -47,7 +47,7 @@ import java.util.Map;
  *          &lt;/map&gt;
  *      &lt;/constructor-arg&gt;
  *  &lt;/bean&gt;
- * <p/>
+ * <br>
  *  &lt;bean id=&quot;myBeanOverriddenDefaultPrefix&quot; class=&quot;org.constretto.spring.propertyplaceholder.factory.ConstrettoSingletonFactoryBean&quot;&gt;
  *    &lt;constructor-arg&gt;
  *          &lt;map&gt;
@@ -57,7 +57,7 @@ import java.util.Map;
  *      &lt;/constructor-arg&gt;
  *      &lt;constructor-arg ref=&quot;developmentBean&quot; /&gt;
  *  &lt;/bean&gt;
- * <p/>
+ * <br>
  * </pre>
  *
  * @author <a href="mailto:kaare.nilsen@gmail.com">Kaare Nilsen</a>

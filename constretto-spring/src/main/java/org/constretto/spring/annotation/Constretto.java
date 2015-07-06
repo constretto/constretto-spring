@@ -7,7 +7,7 @@ import java.lang.annotation.*;
 
 /**
  * Used to setup Constretto Spring BeanPostProcessors in Java-based Spring context.
- * <p/>
+ * <br>
  * If you provide this annotation without any arguments it will search for a public static non-arg method in your
  * configuration class that returns a {@link org.constretto.ConstrettoConfiguration} instance
  * (hint: use {@link org.constretto.ConstrettoBuilder} to create one).

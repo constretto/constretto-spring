@@ -26,9 +26,9 @@ import java.util.Properties;
 /**
  * An adaption of the spring framework {@link PropertyPlaceholderConfigurer} class, using an implementation of the
  * {@link ConstrettoConfiguration} interface to resolve keys
- * <p/>
+ * <br>
  * <h2>Example :</h2>
- * <p/>
+ * <br>
  * <pre>
  * &lt;bean class=&quot;org.constretto.spring.ConstrettoPropertyPlaceholderConfigurer&quot;&gt;
  *   &lt;constructor-arg ref=&quot;someProvider&quot; /&gt;
@@ -38,7 +38,7 @@ import java.util.Properties;
  *   &lt;property name=&quot;myProperty&quot; value=&quot;${propertyKey}&quot; /&gt;
  * &lt;/bean&gt;
  * </pre>
- * <p/>
+ * <br>
  * Note : The provider property of the placeholder configurer are marked as &#064;Autowired, and can be autowired in a
  * annotation config application context.
  *

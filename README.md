@@ -6,6 +6,8 @@ as a PropertyPlaceHolder implementation (allowing property placeholders refering
 to be used in bean definitions).
 
 [![Build Status](https://travis-ci.org/constretto/constretto-spring.png)](https://travis-ci.org/constretto/constretto-spring)
+[![Coverage Status](https://img.shields.io/coveralls/constretto/constretto-spring.svg)](https://coveralls.io/r/constretto/constretto-spring)
+
 
 
 ### Compatibility

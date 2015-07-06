@@ -1,9 +1,11 @@
 Constretto Spring Module
 ========================
 
-Support for using Constretto in Spring contexts. It includes namespace support for XML-based Spring contexts as well 
+Support for using [Constretto](//github.com/constretto/constretto-core) in Spring contexts. It includes namespace support for XML-based Spring contexts as well 
 as a PropertyPlaceHolder implementation (allowing property placeholders refering to to Constretto configuration keys 
 to be used in bean definitions).
+
+** Note: This module used to be part of constretto-core but will starting with version 3 be maintained and versioned independently of constretto-core **
 
 [![Build Status](https://travis-ci.org/constretto/constretto-spring.png)](https://travis-ci.org/constretto/constretto-spring)
 [![Coverage Status](https://img.shields.io/coveralls/constretto/constretto-spring.svg)](https://coveralls.io/r/constretto/constretto-spring)

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright 2008 the original author or authors. Licensed under the Apache License, Version 2.0 (the "License"); you
+    may not use this file except in compliance with the License. You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+    either express or implied. See the License for the specific language governing permissions and limitations under the
+    License.
+  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.constretto</groupId>
+    <artifactId>constretto-spring-parent</artifactId>
+    <packaging>pom</packaging>
+    <name>Constretto :: Spring Integration parent - ${project.version}</name>
+    <version>3.0.0-SNAPSHOT</version>
+    <scm>
+        <connection>scm:git:git@github.com:constretto/constretto-spring.git</connection>
+        <developerConnection>scm:git:git@github.com:constretto/constretto-spring.git</developerConnection>
+        <url>http://github.com/constretto/constretto-spring</url>
+        <tag>master</tag>
+    </scm>
+    <modules>
+        <module>constretto-spring</module>
+        <module>constretto-spring-test</module>
+    </modules>
+    <licenses>
+        <license>
+            <name>ASF v2 License</name>
+            <url>LICENSE.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <properties>
+        <constretto.version>2.2.2</constretto.version>
+        <slf4j.version>1.7.12</slf4j.version>
+        <spring.version>4.1.6.RELEASE</spring.version>
+        <jsr250-api.version>1.0</jsr250-api.version>
+        <junit.version>4.12</junit.version>
+        <ini4j.version>0.5.2</ini4j.version>
+        <jasypt.version>1.9.1</jasypt.version>
+        <commons-beanutils.version>1.9.2</commons-beanutils.version>
+        <system-rules.version>1.9.0</system-rules.version>
+        <aspectjweaver.version>1.8.5</aspectjweaver.version>
+        <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
+        <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.constretto</groupId>
+                <artifactId>constretto-api</artifactId>
+                <version>${constretto.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.constretto</groupId>
+                <artifactId>constretto-core</artifactId>
+                <version>${constretto.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/helper/**/*.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

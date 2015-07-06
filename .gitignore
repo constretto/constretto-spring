@@ -1,0 +1,12 @@
+target
+*.iml
+*.iws
+*.ipr
+.classpath
+.settings
+.project
+bin
+.clover
+.clover/coverage.db
+.idea
+atlassian-ide-plugin.xml

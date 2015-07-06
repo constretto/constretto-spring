@@ -28,9 +28,9 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
 public @interface Environment {
-    public static final String DEVELOPMENT = "development";
-    public static final String TEST = "test";
-    public static final String PRODUCTION = "production";
+    String DEVELOPMENT = "development";
+    String TEST = "test";
+    String PRODUCTION = "production";
 
     String[] value() default {};
 }

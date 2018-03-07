@@ -58,8 +58,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
+        <java.version>1.7</java.version>
         <constretto.version>3.0.0-BETA1</constretto.version>
+
         <slf4j.version>1.7.12</slf4j.version>
         <spring.version>4.1.7.RELEASE</spring.version>
         <jsr250-api.version>1.0</jsr250-api.version>
@@ -170,9 +171,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                    <encoding>UTF-8</encoding>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
             <plugin>

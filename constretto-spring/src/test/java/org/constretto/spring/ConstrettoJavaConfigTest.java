@@ -5,7 +5,7 @@ import org.constretto.ConstrettoBuilder;
 import org.constretto.ConstrettoConfiguration;
 import org.constretto.exception.ConstrettoException;
 import org.constretto.model.Resource;
-import org.constretto.spring.annotation.Constretto;
+import org.constretto.spring.annotation.EnableConstretto;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
@@ -58,13 +58,13 @@ public class ConstrettoJavaConfigTest {
 
     }
 
-    @Constretto
+    @EnableConstretto
     @Configuration
     public static class TestContextWithoutConstretto {
 
     }
 
-    @Constretto
+    @EnableConstretto
     @Configuration
     public static class TestContextWithConstretto {
 
@@ -73,11 +73,11 @@ public class ConstrettoJavaConfigTest {
 
         @Bean
         public static ConstrettoConfiguration constrettoConfiguration() {
-            return new ConstrettoBuilder(true)
-                    .createIniFileConfigurationStore()
-                    .addResource(Resource.create("classpath:properties/test1.ini"))
-                    .done()
-                    .getConfiguration();
+            return ConstrettoBuilder.withSystemProperties()
+                                    .createIniFileConfigurationStore()
+                                    .addResource(Resource.create("classpath:properties/test1.ini"))
+                                    .done()
+                                    .getConfiguration();
         }
 
         @Bean(name = BEAN_KEY_LIST)
@@ -94,11 +94,11 @@ public class ConstrettoJavaConfigTest {
     }
 
     @Configuration
-    @Constretto(enableAnnotationSupport = false, enablePropertyPlaceholder = false)
+    @EnableConstretto(enableAnnotationSupport = false, enablePropertyPlaceholder = false)
     public static class TestContextWithNoConstrettoBeanPostProcessors {
 
         public static ConstrettoConfiguration constrettoConfiguration() {
-            return new ConstrettoBuilder(false).getConfiguration();
+            return ConstrettoBuilder.empty().getConfiguration();
         }
 
         @Bean(name = BEAN_KEY_LIST)

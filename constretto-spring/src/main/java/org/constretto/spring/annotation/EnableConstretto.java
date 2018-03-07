@@ -22,7 +22,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Import(ConstrettoImportRegistrar.class)
 @Documented
-public @interface Constretto {
+public @interface EnableConstretto {
 
     /**
      * Should the Constretto based property placeholder BeanPostProcessor be enabled? Default is true

@@ -4,7 +4,7 @@ import org.constretto.ConstrettoConfiguration;
 import org.constretto.exception.ConstrettoException;
 import org.constretto.spring.ConfigurationAnnotationConfigurer;
 import org.constretto.spring.ConstrettoPropertyPlaceholderConfigurer;
-import org.constretto.spring.annotation.Constretto;
+import org.constretto.spring.annotation.EnableConstretto;
 import org.constretto.spring.internal.resolver.DefaultAssemblyContextResolver;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.ConstructorArgumentValues;
@@ -31,7 +31,8 @@ public class ConstrettoImportRegistrar implements ImportBeanDefinitionRegistrar 
     public void registerBeanDefinitions(final AnnotationMetadata importingClassMetadata,
                                         final BeanDefinitionRegistry registry) {
         final ConstrettoConfiguration constrettoConfiguration = getConstrettoConfigurationForConfigurationClass(importingClassMetadata.getClassName());
-        AnnotationAttributes annotationAttributes = AnnotationAttributes.fromMap(importingClassMetadata.getAnnotationAttributes(Constretto.class.getName()));
+        AnnotationAttributes annotationAttributes = AnnotationAttributes
+                .fromMap(importingClassMetadata.getAnnotationAttributes(EnableConstretto.class.getName()));
         if (annotationAttributes.getBoolean("enablePropertyPlaceholder")) {
             registry.registerBeanDefinition(ConstrettoPropertyPlaceholderConfigurer.class.getName(), createPropertyPlaceholderBeanDefinition(constrettoConfiguration));
         }

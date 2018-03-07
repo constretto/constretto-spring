@@ -31,13 +31,13 @@ public class ConstrettoJavaConfigTest {
     public static final String KEY_VALUE = "value7";
 
     @Test(expected = ConstrettoException.class)
-    public void testTestContextWithoutConstretto() throws Exception {
+    public void testTestContextWithoutConstretto() {
         new AnnotationConfigApplicationContext(TestContextWithoutConstretto.class);
 
     }
 
     @Test
-    public void testContextProvidingConstrettoConfiguration() throws Exception {
+    public void testContextProvidingConstrettoConfiguration() {
         final ApplicationContext applicationContext = new AnnotationConfigApplicationContext(TestContextWithConstretto.class);
         assertNotNull(applicationContext);
         final List<String> keyList = applicationContext.getBean(BEAN_KEY_LIST, List.class);
@@ -50,7 +50,7 @@ public class ConstrettoJavaConfigTest {
     }
 
     @Test
-    public void testContextWithNotBeanPostProcessorsEnabled() throws Exception {
+    public void testContextWithNotBeanPostProcessorsEnabled() {
         final AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(TestContextWithNoConstrettoBeanPostProcessors.class);
         final List<String> keys = applicationContext.getBean(BEAN_KEY_LIST, List.class);
         // The substitution key should not be substituted for a value
@@ -87,7 +87,7 @@ public class ConstrettoJavaConfigTest {
 
         @Bean(name = BEAN_KEY_SET)
         public Set<String> keySet() {
-            final Set<String> set = new HashSet<String>();
+            final Set<String> set = new HashSet<>();
             set.add(key);
             return set;
         }

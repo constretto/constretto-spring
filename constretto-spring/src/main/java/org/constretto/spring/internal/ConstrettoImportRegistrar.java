@@ -84,9 +84,7 @@ public class ConstrettoImportRegistrar implements ImportBeanDefinitionRegistrar 
             Method factoryMethod = methods.get(0);
             try {
                 return (ConstrettoConfiguration) factoryMethod.invoke(null);
-            } catch (IllegalAccessException e) {
-                throw new ConstrettoException(String.format("Could not invoke factory method \"%1$s\" in configuration class \"%2$s\"", factoryMethod.getName(), configurationClass.getName()), e);
-            } catch (InvocationTargetException e) {
+            } catch (IllegalAccessException | InvocationTargetException e) {
                 throw new ConstrettoException(String.format("Could not invoke factory method \"%1$s\" in configuration class \"%2$s\"", factoryMethod.getName(), configurationClass.getName()), e);
             }
         }
@@ -99,7 +97,7 @@ public class ConstrettoImportRegistrar implements ImportBeanDefinitionRegistrar 
     }
 
     private List<Method> filterMethodsHavingArgs(Iterable<Method> methods) {
-        List<Method> nonArgsMethods = new LinkedList<Method>();
+        List<Method> nonArgsMethods = new LinkedList<>();
         for (Method method : methods) {
             if (method.getParameterTypes().length == 0) {
                 nonArgsMethods.add(method);
@@ -109,7 +107,7 @@ public class ConstrettoImportRegistrar implements ImportBeanDefinitionRegistrar 
     }
 
     private List<Method> filterMethodsReturningByReturnTypeNotBeingConstretto(Iterable<Method> methods) {
-        List<Method> constrettoMethods = new LinkedList<Method>();
+        List<Method> constrettoMethods = new LinkedList<>();
         for (Method method : methods) {
             if (ConstrettoConfiguration.class.isAssignableFrom(method.getReturnType())) {
                 constrettoMethods.add(method);
@@ -119,7 +117,7 @@ public class ConstrettoImportRegistrar implements ImportBeanDefinitionRegistrar 
     }
 
     private List<Method> findPublicStaticMethods(Class<?> configurationClass) {
-        List<Method> staticMethods = new LinkedList<Method>();
+        List<Method> staticMethods = new LinkedList<>();
         for (Method method : configurationClass.getMethods()) {
             if (Modifier.isStatic(method.getModifiers()) && Modifier.isPublic(method.getModifiers())) {
                 staticMethods.add(method);

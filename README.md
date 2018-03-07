@@ -42,6 +42,32 @@ Spring XML Namespace support
 
 Spring JavaConfig support
 ----------------------------
+There are really to ways to enable Constretto support for Java-based Spring contexts. The first method is to add the 
+@EnableConstretto annotation and a static method returning a ConstrettoConfiguration configuration
+## using @EnableConstretto 
+```java
+    @EnableConstretto
+    @org.springframework.context.annotation.Configuration
+    public class TestContext  {
+    
+        @Configuration(required = true) // Will be injected by Constretto's Configuration processor
+        private String key1;
+    
+        @Value("${key1}") // Will be injected by Constretto's Property placeholder processor
+        private String key1AsValue;
+    
+        @Override
+        public org.constretto.ConstrettoConfiguration constrettoConfiguration() {
+            return new ConstrettoBuilder()
+                    .createPropertiesStore()
+                    .addResource(Resource.create("classpath:properties/test1.properties"))
+                    .done()
+                    .getConfiguration();
+        }
+    }
+```
+## Extending BasicConstrettoConfiguration
+The second method is to extend the BasicConstrettoConfiguration class and override the constrettoConfiguration() method
 ```java
     @org.springframework.context.annotation.Configuration
     public class TestContext extends BasicConstrettoConfiguration {

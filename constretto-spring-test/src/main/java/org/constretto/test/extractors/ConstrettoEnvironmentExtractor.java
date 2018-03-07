@@ -13,7 +13,7 @@ public class ConstrettoEnvironmentExtractor {
     /**
      * Extracts the value of the {@link Environment} annotation for the test class containing the given test method.
      *
-     * @param description
+     * @param description a {@link Description} of the current test
      * @return an array with the specified values or null
      */
     public static String[] extractEnvironmentValue(final Description description) {

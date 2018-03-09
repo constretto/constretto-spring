@@ -1,5 +1,5 @@
-Constretto Spring Module
-========================
+# Constretto Spring Module
+
 
 Support for using [Constretto](//github.com/constretto/constretto-core) in Spring contexts. It includes namespace support for XML-based Spring contexts as well 
 as a PropertyPlaceHolder implementation (allowing property placeholders refering to to Constretto configuration keys 
@@ -16,8 +16,7 @@ to be used in bean definitions).
 The Spring module is tested with Spring 3.2.X and Java 7. Most features will probably work fine with Spring 4.X and/or Java 8, but 100% compatibility can not be guaranteed.  
 
 
-Spring XML Namespace support
-----------------------------
+## Spring XML Namespace support
 
 ```xml
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -40,11 +39,11 @@ Spring XML Namespace support
 </beans>
 ```
 
-Spring JavaConfig support
-----------------------------
-There are really to ways to enable Constretto support for Java-based Spring contexts. The first method is to add the 
+## Spring JavaConfig support
+
+There are two ways to enable Constretto support for Java-based Spring contexts. The first method is to add the 
 @EnableConstretto annotation and a static method returning a ConstrettoConfiguration configuration
-## using @EnableConstretto 
+### using @EnableConstretto 
 ```java
     @EnableConstretto
     @org.springframework.context.annotation.Configuration
@@ -66,7 +65,7 @@ There are really to ways to enable Constretto support for Java-based Spring cont
         }
     }
 ```
-## Extending BasicConstrettoConfiguration
+### Extending BasicConstrettoConfiguration
 The second method is to extend the BasicConstrettoConfiguration class and override the constrettoConfiguration() method
 ```java
     @org.springframework.context.annotation.Configuration

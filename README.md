@@ -15,6 +15,15 @@ to be used in bean definitions).
 ### Compatibility
 The Spring module is tested with Spring 3.2.X and Java 7. Most features will probably work fine with Spring 4.X and/or Java 8, but 100% compatibility can not be guaranteed.  
 
+## Adding dependency
+### Maven
+```xml
+   <dependency>
+     <groupId>org.constretto</groupId>
+     <artifactId>constretto-spring</artifactId>
+     <version>3.0.0-BETA1</version>
+   </dependency>
+```
 
 ## Spring XML Namespace support
 

@@ -64,8 +64,8 @@ There are two ways to enable Constretto support for Java-based Spring contexts. 
         @Value("${key1}") // Will be injected by Constretto's Property placeholder processor
         private String key1AsValue;
     
-        @Override
-        public org.constretto.ConstrettoConfiguration constrettoConfiguration() {
+        // a static method returning a ConstrettoConfiguration must be defined
+        public static org.constretto.ConstrettoConfiguration constrettoConfiguration() {
             return new ConstrettoBuilder()
                     .createPropertiesStore()
                     .addResource(Resource.create("classpath:properties/test1.properties"))

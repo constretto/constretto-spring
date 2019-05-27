@@ -67,7 +67,7 @@
         <junit.version>4.12</junit.version>
         <ini4j.version>0.5.2</ini4j.version>
         <jasypt.version>1.9.1</jasypt.version>
-        <commons-beanutils.version>1.9.2</commons-beanutils.version>
+        <commons-beanutils.version>1.9.3</commons-beanutils.version>
         <system-rules.version>1.9.0</system-rules.version>
         <aspectjweaver.version>1.8.5</aspectjweaver.version>
         <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>

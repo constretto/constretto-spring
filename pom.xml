@@ -77,7 +77,7 @@
         <maven-coveralls-plugin.version>3.1.0</maven-coveralls-plugin.version>
         <maven-source-plugin.version>2.4</maven-source-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
-        <maven-nexus-staging-plugin.version>1.6.5</maven-nexus-staging-plugin.version>
+        <maven-nexus-staging-plugin.version>1.6.8</maven-nexus-staging-plugin.version>
     </properties>
     <dependencyManagement>
         <dependencies>

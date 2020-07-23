@@ -69,7 +69,7 @@
         <jasypt.version>1.9.1</jasypt.version>
         <commons-beanutils.version>1.9.2</commons-beanutils.version>
         <system-rules.version>1.9.0</system-rules.version>
-        <aspectjweaver.version>1.8.5</aspectjweaver.version>
+        <aspectjweaver.version>1.9.6</aspectjweaver.version>
         <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
         <maven-javadoc-plugin.version>2.10.1</maven-javadoc-plugin.version>

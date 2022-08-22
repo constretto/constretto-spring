@@ -61,7 +61,7 @@
         <java.version>1.7</java.version>
         <constretto.version>3.0.0-BETA1</constretto.version>
 
-        <slf4j.version>1.7.12</slf4j.version>
+        <slf4j.version>2.0.0</slf4j.version>
         <spring.version>4.1.7.RELEASE</spring.version>
         <jsr250-api.version>1.0</jsr250-api.version>
         <junit.version>4.12</junit.version>
